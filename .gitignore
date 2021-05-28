@@ -26,3 +26,5 @@ yarn-error.log*
 .gitignore
 src/backend/truffle*.js
 src/config/*
+
+notes.txt

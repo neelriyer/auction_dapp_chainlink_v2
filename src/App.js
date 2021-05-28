@@ -1,4 +1,3 @@
-//todo: add loading button, add chainlink api to get USD prices
 
 import React, { Component } from "react";
 // import AuctionContract from "./contracts/Auction.json";
@@ -142,12 +141,15 @@ class App extends Component {
       return <div>Loading Web3, accounts, and contract...</div>;
     }
     return (
+
       <div className="Auction App">
         <h1>Auction DApp with Chainlink</h1>
-        <img src="https://cdn.coil.com/cdn-cgi/image/format=auto,fit=scale-down,w=1920/images/Gji3k7UvQP-lRlaqnaSOOg.jpg" alt="Parks and Rec DApp img"></img>
+        {/* <div style="background-image: url('background.png');"></div> */}
+        {/* <img src="" alt="Parks and Rec DApp img"></img> */}
         <div>Auction owner address: <strong>{this.state.auctionOwner}</strong>
             <br/> Highest bidder: <strong>{(this.state.highestBidder == this.state.accounts[0]) ? "You are the highest bidder" : this.state.highestBidder}</strong>
-            <br/> Highest bid: <strong>{this.state.highestBid} ether ({this.state.ethPrice*this.state.highestBid} USD)</strong> 
+            <br/> Highest bid: <strong>{this.state.highestBid} ether </strong>
+            <br/> Highest bid (USD): <strong> {this.state.ethPrice*this.state.highestBid} USD </strong> <a href = "https://kovan.etherscan.io/address/0x9326BFA02ADD2366b30bacB125260Af641031331">from chainlink aggregator</a> 
         </div>
         <div>Auction ID: <strong>{this.state.auctionId}</strong>
           {/* <br/>Your total bid: <strong>{this.state.userBalance} ether</strong> */}
