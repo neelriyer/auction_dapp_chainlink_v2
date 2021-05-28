@@ -1,3 +1,23 @@
+# Auction Dapp with Chainlink
+
+Auction Dapp with Chainlink AggregatorV3Interface for ETH/USD price feed.
+
+![img](screenshot.png)
+
+Deployed on the Kovan test network.
+
+```solidity
+/**
+     * Network: Kovan
+     * Aggregator: ETH/USD
+     * Address: 0x9326BFA02ADD2366b30bacB125260Af641031331
+     */
+    constructor() public {
+        priceFeed = AggregatorV3Interface(0x9326BFA02ADD2366b30bacB125260Af641031331);
+    }
+
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
