@@ -2,7 +2,7 @@ import "./chainlink_get_latest_price.sol";
 
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
-contract SimpleAuction is PriceConsumerV3 {
+contract SimpleAuction {
     // Parameters of the auction. Times are either
     // absolute unix timestamps (seconds since 1970-01-01)
     // or time periods in seconds.
@@ -40,10 +40,11 @@ contract SimpleAuction is PriceConsumerV3 {
     /// The function auctionEnd has already been called.
     error AuctionEndAlreadyCalled();
 
+
     /// Create a simple auction with `_biddingTime`
     /// seconds bidding time on behalf of the
     /// beneficiary address `_beneficiary`.
-    constructor(
+    constructor (
         uint _biddingTime,
         address payable _beneficiary
     ) {
@@ -89,7 +90,8 @@ contract SimpleAuction is PriceConsumerV3 {
     }
 
     function getEthPrice() public view returns (int) {
-        return getThePrice();
+        // PriceConsumerV3 link = ;
+        return PriceConsumerV3(0xA7E9a46ECAeefC630C218dCb5a2A8a9380Aa9435).getThePrice();
     }
 
     function getAuctionOwner() public pure returns (address) {

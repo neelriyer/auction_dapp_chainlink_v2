@@ -2,7 +2,9 @@
 
 import React, { Component } from "react";
 // import AuctionContract from "./contracts/Auction.json";
-import AuctionContract from "./contracts/SimpleAuction.json" ;
+import AuctionContract from "./backend/build/contracts/SimpleAuction.json" ;
+import PriceConsumerV3 from "./backend/build/contracts/PriceConsumerV3.json" ;
+
 import getWeb3 from "./getWeb3";
 import config from "./config/config.json"
 import BigNumber from "bignumber.js";
@@ -32,13 +34,18 @@ class App extends Component {
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
       const instance = new web3.eth.Contract(
-        AuctionContract, 
-        config.network && config.contract_address, //address
+        AuctionContract.abi, 
+        config.network && config.auction_address, //address
       );
       const owner = await instance.methods.getAuctionOwner().call();
       const id = await instance.methods.getAuctionId().call();
       const highestBidder = await instance.methods.getHighestBidder().call();
       const highestBid = await instance.methods.getHighestBid().call();
+      
+      // eth price
+      const priceFeed = new web3.eth.Contract(PriceConsumerV3.abi, config.network && config.price_feed_address);
+      const ethPrice = await priceFeed.methods.getThePrice().call()/1e8;
+      
       // const userBalance = await instance.methods.getUserBalance().call({from: accounts[0]});
 
       console.log("accounts: " + accounts);
@@ -46,6 +53,7 @@ class App extends Component {
       console.log("auction id: " + id);
       console.log("highest bidder: " + highestBidder);
       console.log("highest bid: " + highestBid);
+      console.log("ethPrice: " + ethPrice);
       // console.log("user balance: " + userBalance);
 
       this.setState({
@@ -55,7 +63,8 @@ class App extends Component {
         auctionOwner: owner,
         auctionId: id,
         highestBid: web3.utils.fromWei(highestBid, 'ether'),
-        highestBidder: highestBidder
+        highestBidder: highestBidder,
+        ethPrice: ethPrice.toString(),
         // userBalance: web3.utils.fromWei(userBalance, 'ether')
       });
 
@@ -138,7 +147,7 @@ class App extends Component {
         <img src="https://cdn.coil.com/cdn-cgi/image/format=auto,fit=scale-down,w=1920/images/Gji3k7UvQP-lRlaqnaSOOg.jpg" alt="Parks and Rec DApp img"></img>
         <div>Auction owner address: <strong>{this.state.auctionOwner}</strong>
             <br/> Highest bidder: <strong>{(this.state.highestBidder == this.state.accounts[0]) ? "You are the highest bidder" : this.state.highestBidder}</strong>
-            <br/> Highest bid: <strong>{this.state.highestBid} ether</strong>
+            <br/> Highest bid: <strong>{this.state.highestBid} ether ({this.state.ethPrice*this.state.highestBid} USD)</strong> 
         </div>
         <div>Auction ID: <strong>{this.state.auctionId}</strong>
           {/* <br/>Your total bid: <strong>{this.state.userBalance} ether</strong> */}

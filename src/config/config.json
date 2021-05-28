@@ -1,4 +1,5 @@
 {
-    "network": "ropsten",
-    "contract_address": "0x6f95D4D6E5d9C55e8118aCA049d8Dd196Bb6c298"
+    "network": "kovan",
+    "auction_address": "0x09A71D0a9A356201054BAdd799491200c2811f94",
+    "price_feed_address": "0x9e5558BF3EEF499e9b584C1a5c376c8F0195e796"
 }
