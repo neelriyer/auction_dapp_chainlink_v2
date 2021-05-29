@@ -4,12 +4,6 @@
 
 Auction Dapp with Chainlink AggregatorV3Interface for ETH/USD price feed.
 
-![img](screenshot.png)
-
-Deployed on the Kovan test network. 
-
-Availiable here: https://spiyer99.github.io/auction_dapp_chainlink_v2/
-
 ## Chainlink Oracle
 
 Code borrowed from [chainlink docs](https://docs.chain.link/docs/get-the-latest-price/).
@@ -53,6 +47,14 @@ Initialises truffle in the `backend` folder.
 ### `truffle migrate --network kovan`
 
 Deploy to kovan test network. You'll have to update the `truffle-config` file with your metamask and infura credentials. 
+
+# Deployment
+
+Deployed on the Kovan test network. 
+
+![img](screenshot.png)
+
+Availiable here: https://spiyer99.github.io/auction_dapp_chainlink_v2/
 
 # Frontend
 
