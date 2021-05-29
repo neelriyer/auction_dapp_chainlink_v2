@@ -1,5 +1,7 @@
 # Auction Dapp with Chainlink
 
+![img](https://raw.githubusercontent.com/spiyer99/auction_dapp_chainlink/master/auction_diagram.png)
+
 Auction Dapp with Chainlink AggregatorV3Interface for ETH/USD price feed.
 
 ![img](screenshot.png)
