@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/auction-app/static/css/main.b100e6da.chunk.css",
-    "main.js": "/auction-app/static/js/main.8785a0d0.chunk.js",
-    "main.js.map": "/auction-app/static/js/main.8785a0d0.chunk.js.map",
-    "runtime-main.js": "/auction-app/static/js/runtime-main.ad8c3a94.js",
-    "runtime-main.js.map": "/auction-app/static/js/runtime-main.ad8c3a94.js.map",
-    "static/js/2.87d11507.chunk.js": "/auction-app/static/js/2.87d11507.chunk.js",
-    "static/js/2.87d11507.chunk.js.map": "/auction-app/static/js/2.87d11507.chunk.js.map",
-    "index.html": "/auction-app/index.html",
-    "precache-manifest.62afc80bc44e666d71fbb2d5dd4b5956.js": "/auction-app/precache-manifest.62afc80bc44e666d71fbb2d5dd4b5956.js",
-    "service-worker.js": "/auction-app/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/auction-app/static/css/main.b100e6da.chunk.css.map"
+    "main.css": "/auction_dapp_chainlink_v2/static/css/main.b100e6da.chunk.css",
+    "main.js": "/auction_dapp_chainlink_v2/static/js/main.8785a0d0.chunk.js",
+    "main.js.map": "/auction_dapp_chainlink_v2/static/js/main.8785a0d0.chunk.js.map",
+    "runtime-main.js": "/auction_dapp_chainlink_v2/static/js/runtime-main.ad8c3a94.js",
+    "runtime-main.js.map": "/auction_dapp_chainlink_v2/static/js/runtime-main.ad8c3a94.js.map",
+    "static/js/2.87d11507.chunk.js": "/auction_dapp_chainlink_v2/static/js/2.87d11507.chunk.js",
+    "static/js/2.87d11507.chunk.js.map": "/auction_dapp_chainlink_v2/static/js/2.87d11507.chunk.js.map",
+    "index.html": "/auction_dapp_chainlink_v2/index.html",
+    "precache-manifest.62afc80bc44e666d71fbb2d5dd4b5956.js": "/auction_dapp_chainlink_v2/precache-manifest.62afc80bc44e666d71fbb2d5dd4b5956.js",
+    "service-worker.js": "/auction_dapp_chainlink_v2/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/auction_dapp_chainlink_v2/static/css/main.b100e6da.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.ad8c3a94.js",
