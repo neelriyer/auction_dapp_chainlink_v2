@@ -4,19 +4,55 @@ Auction Dapp with Chainlink AggregatorV3Interface for ETH/USD price feed.
 
 ![img](screenshot.png)
 
-Deployed on the Kovan test network.
+Deployed on the Kovan test network. 
+
+Availiable here: https://spiyer99.github.io/auction_dapp_chainlink_v2/
+
+## Chainlink Oracle
+
+Code borrowed from [chainlink docs](https://docs.chain.link/docs/get-the-latest-price/).
 
 ```solidity
-/**
-     * Network: Kovan
-     * Aggregator: ETH/USD
-     * Address: 0x9326BFA02ADD2366b30bacB125260Af641031331
-     */
-    constructor() public {
-        priceFeed = AggregatorV3Interface(0x9326BFA02ADD2366b30bacB125260Af641031331);
-    }
 
+AggregatorV3Interface internal priceFeed;
+
+/**
+* Network: Kovan
+* Aggregator: ETH/USD
+* Address: 0x9326BFA02ADD2366b30bacB125260Af641031331
+*/
+constructor() public {
+    priceFeed = AggregatorV3Interface(0x9326BFA02ADD2366b30bacB125260Af641031331);
+}
+
+/**
+    * Returns the latest price
+    */
+function getThePrice() public view returns (int) {
+    (
+        uint80 roundID, 
+        int price,
+        uint startedAt,
+        uint timeStamp,
+        uint80 answeredInRound
+    ) = priceFeed.latestRoundData();
+    return price;
+}
 ```
+
+## Solidity Contracts
+
+Solidity contracts are in the [contracts](src/backend/contracts) folder. The backend was built using [trufflesuite](https://www.trufflesuite.com/).
+
+### `truffle init`
+
+Initialises truffle in the `backend` folder.
+
+### `truffle migrate --network kovan`
+
+Deploy to kovan test network. You'll have to update the `truffle-config` file with your metamask and infura credentials. 
+
+# Frontend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
