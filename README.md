@@ -2,6 +2,8 @@
 
 Auction Dapp with the Chainlink AggregatorV3Interface for a ETH/USD price feed.
 
+Work in progress - let me know how I can improve this.
+
 ![img](https://raw.githubusercontent.com/spiyer99/auction_dapp_chainlink/master/auction_diagram.png)
 
 ## Chainlink Oracle
