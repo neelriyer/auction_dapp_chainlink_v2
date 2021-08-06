@@ -1,6 +1,8 @@
-# Auction Dapp with Chainlink
+# Auction Dapp with Chainlink (Kovan testnet only)
 
 Auction Dapp with the Chainlink AggregatorV3Interface for a ETH/USD price feed.
+
+Please ensure you have metamask installed and are connected to the 'Kovan' testnet.
 
 Work in progress - let me know how I can improve this.
 
